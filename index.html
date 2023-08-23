@@ -1,62 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="index.css">
-<title>Projetos JavaScript por Leonardo Araujo</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Projetos JavaScript por Leonardo Araujo</title>
 </head>
+
 <body>
-<header>
-  <h1>Projetos JavaScript por Leonardo Araujo</h1>
-</header>
-<main>
-  
-  <div id="scroll">
-    <section class="project">
-      <img src="img/calculadora°c" alt="Calculadora">
-      <div class="project-details">
-        <h2>Calculadora de °C</h2>
-        <p>Calculadora desenvolvida com JavaScript. Esta calculadora coverte de °C para °F</p>
-        <a href="calculadora°c/index.html" class="project-link">Ver Projeto</a>
-      </div>
-    </section>
+  <header>
+    <h1>Projetos JavaScript por Leonardo Araujo</h1>
+    <input type="text" id="search" placeholder="Buscar projeto...">
+  </header>
+  <main>
 
-    <section class="project">
-      <img src="img/primos" alt="Calculadora">
-      <div class="project-details">
-        <h2>Calculadora de Primos</h2>
-        <p>Calculadora desenvolvida com JavaScript para mostrar os números primos até o número escolhido pelo usuário</p>
-        <a href="limite-primos/index.html" class="project-link">Ver Projeto</a>
-      </div>
-    </section>
-    <section class="project">
-      <img src="img/financiador" alt="Calculadora">
-      <div class="project-details">
-        <h2>Calculadora de financiamentos</h2>
-        <p> Calculadora desenvolvida com JavaScript. Esta calculadora pode fazer calculos de juro simples + mostrar parcelas a depender da escolha do número de parcelas</p>
-        <a href="financiador/index.html" class="project-link">Ver Projeto</a>
-      </div>
-    </section>
+    <div id="scroll">
+      <section class="project">
+        <img src="img/calculadora°c" alt="Calculadora">
+        <div class="project-details">
+          <h2>Calculadora de °C</h2>
+          <p>Calculadora desenvolvida com JavaScript. Esta calculadora coverte de °C para °F</p>
+          <a href="Calculadora°c/index.html" class="project-link">Ver Projeto</a>
+        </div>
+      </section>
 
-    <section class="project">
-      <img src="img/calculadora.jpg" alt="Calculadora">
-      <div class="project-details">
-        <h2>Calculadora Interativa</h2>
-        <p>Uma calculadora interativa desenvolvida em JavaScript puro. Esta calculadora suporta operações básicas de matemática, proporcionando uma experiência intuitiva e responsiva.</p>
-        <a href="Calculadora/index.html" class="project-link">Ver Projeto</a>
-      </div>
-    </section>
+      <section class="project">
+        <img src="img/primos" alt="Calculadora">
+        <div class="project-details">
+          <h2>Calculadora de Primos</h2>
+          <p>Calculadora desenvolvida com JavaScript para mostrar os números primos até o número escolhido pelo usuário
+          </p>
+          <a href="limite-primos/index.html" class="project-link">Ver Projeto</a>
+        </div>
+      </section>
+      <section class="project">
+        <img src="img/financiador" alt="Calculadora">
+        <div class="project-details">
+          <h2>Calculadora de financiamentos</h2>
+          <p> Calculadora desenvolvida com JavaScript. Esta calculadora pode fazer calculos de juro simples + mostrar
+            parcelas a depender da escolha do número de parcelas</p>
+          <a href="financiador/index.html" class="project-link">Ver Projeto</a>
+        </div>
+      </section>
+
+      <section class="project">
+        <img src="img/calculadora.jpg" alt="Calculadora">
+        <div class="project-details">
+          <h2>Calculadora Interativa</h2>
+          <p>Uma calculadora interativa desenvolvida em JavaScript puro. Esta calculadora suporta operações básicas de
+            matemática, proporcionando uma experiência intuitiva e responsiva.</p>
+          <a href="Calculadora/index.html" class="project-link">Ver Projeto</a>
+        </div>
+      </section>
+
+      <section class="project">
+        <img src="img/area.jpg" alt="Calculadora Geométrica">
+        <div class="project-details">
+          <h2>Calculadora de Área de Figuras Geométricas</h2>
+          <p>Uma calculadora que permite calcular a área de várias figuras geométricas, como retângulos, triângulos e
+            círculos. Desenvolvida com HTML, CSS e JavaScript.</p>
+          <a href="area/areas.html" class="project-link">Ver Projeto</a>
+        </div>
+      </section>
+
+      <section class="project">
+        <img src="img/adivinha.jpg" alt="Jogo de adivinha">
+        <div class="project-details">
+          <h2>Jogo de adivinha</h2>
+          <p>Um jogo de adivinhar o número aleatório, desenvolvido em JavaScript</p>
+          <a href="Adivinha/adivinha.html" class="project-link">Ver Projeto</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById("search").addEventListener("input", searchProjects);
+    function searchProjects() {
+      const searchText = document.getElementById("search").value.toLowerCase();
+      const projects = document.querySelectorAll(".project");
+
+      projects.forEach(project => {
+        const projectName = project.querySelector("h2").textContent.toLowerCase();
+        if (projectName.includes(searchText)) {
+          project.style.display = "flex";
+        } else {
+          project.style.display = "none";
+        }
+      });
+    }
+
     
-    <section class="project">
-      <img src="img/area.jpg" alt="Calculadora Geométrica">
-      <div class="project-details">
-        <h2>Calculadora de Área de Figuras Geométricas</h2>
-        <p>Uma calculadora que permite calcular a área de várias figuras geométricas, como retângulos, triângulos e círculos. Desenvolvida com HTML, CSS e JavaScript.</p>
-        <a href="area/areas.html" class="project-link">Ver Projeto</a>
-      </div>
-    </section>
-  </div>
-</main>
+  </script>
 </body>
+
 </html>
