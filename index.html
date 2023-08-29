@@ -16,6 +16,7 @@
   <main>
 
     <div id="scroll">
+      <p id="msg"></p>
       <section class="project">
         <img src="img/calculadora°c" alt="Calculadora">
         <div class="project-details">
@@ -80,15 +81,28 @@
     function searchProjects() {
       const searchText = document.getElementById("search").value.toLowerCase();
       const projects = document.querySelectorAll(".project");
+      const mensagem = document.getElementById("msg")
+      let projetoEncontrado = false;
 
       projects.forEach(project => {
         const projectName = project.querySelector("h2").textContent.toLowerCase();
         if (projectName.includes(searchText)) {
           project.style.display = "flex";
+          projetoEncontrado = true;
         } else {
           project.style.display = "none";
-        }
+        } 
       });
+
+      if(projetoEncontrado == false){
+        mensagem.innerHTML = "Nenhum resultado encontrado!";
+      } else if (projetoEncontrado == true){
+        mensagem.innerHTML = "";
+      }
+
+
+        
+      
     }
 
     
