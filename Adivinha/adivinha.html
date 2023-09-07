@@ -16,10 +16,16 @@
       <a href="../index.html" class="voltar">Voltar à Página Inicial</a>
    </header>
    <div class="container">
+      <h2>Lista de ganhadores:</h2>
+      <div id="ganhadores"></div>
       <h2>Adivinhe o número sorteado:</h2>
       <div class="status" id="status"></div>
       <div class="tentativa" id="tentativa"></div>
       <form class="form" id="form">
+         <div id="namediv">
+            <label for="name">Digite seu nome:</label>
+            <input type="text" id="name" name="name" required>
+         </div>
          <label for="chute">Chute um número entre 0 e 100</label>
          <input type="number" name="chute" id="chute" required>
          <button id="btnVerifica">Verificar</button>
