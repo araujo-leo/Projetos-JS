@@ -15,6 +15,9 @@ header {
    padding: 10px;
 }
 
+p{
+   color: green;
+}
 .container {
    max-width: 600px;
    margin: 0 auto;
@@ -30,7 +33,7 @@ label {
    margin-bottom: 5px;
 }
 
-input[type="number"] {
+input {
    width: 100%;
    padding: 5px;
    margin-bottom: 10px;
