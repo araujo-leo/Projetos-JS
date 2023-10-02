@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+      <h1>Projetos JavaScript por Leonardo Araujo</h1>
+      <a href="../index.html" class="voltar">Voltar à Página Inicial</a>
+    </header>
+    <div class="container">
+    <div class="calculator">
+        <input type="text" id="result" readonly>
+        <div class="btn-container">
+          <button onclick="colocarRes('1')">1</button>
+          <button onclick="colocarRes('2')">2</button>
+          <button onclick="colocarRes('3')">3</button>
+          <button onclick="colocarRes('+')" class="operator">+</button>
+          <button onclick="colocarRes('4')">4</button>
+          <button onclick="colocarRes('5')">5</button>
+          <button onclick="colocarRes('6')">6</button>
+          <button onclick="colocarRes('-')" class="operator" >-</button>
+          <button onclick="colocarRes('7')">7</button>
+          <button onclick="colocarRes('8')">8</button>
+          <button onclick="colocarRes('9')">9</button>
+          <button onclick="colocarRes('*')" class="operator">*</button>
+          <button onclick="colocarRes('0')">0</button>
+          <button onclick="limpar()"class="clear" >C</button>
+          <button onclick="calcular()"class="equal" >=</button>
+          <button onclick="colocarRes('/')" class="operator" >/</button>
+        </div>
+      </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
