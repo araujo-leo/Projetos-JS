@@ -25,10 +25,22 @@
     margin: 0;
   }
   
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed; /* Define o footer como fixo na parte inferior */
+    bottom: 0;
+    width: 100%; /* Garante que o footer ocupe a largura total da tela */
+  }
+  
   main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
+    /* Adicione um margin-bottom igual à altura do footer */
+    margin-bottom: 2rem; /* Ajuste de acordo com a altura do seu footer */
   }
 
   #search {
