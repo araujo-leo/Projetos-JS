@@ -1,20 +1,14 @@
-let jogarNovamente = true; // Uma variável para controlar se o jogo será reiniciado.
-let tentativas = 6; // Número de tentativas disponíveis para o jogador.
-let lista = []; // Uma lista para armazenar as letras corretas adivinhadas pelo jogador.
-let palavraSecretaCategoria; // A categoria da palavra secreta.
-let palavraSecretaSorteada; // A palavra secreta sorteada para o jogo.
-let palavras = []; // Uma lista de palavras disponíveis para o jogo.
+let jogarNovamente = true; 
+let tentativas = 6; 
+let lista = []; 
+let palavraSecretaCategoria; 
+let palavraSecretaSorteada; 
+let palavras = []; 
 
-// Função que carrega a lista de palavras automaticamente.
 carregaListaAutomatica();
-
-// Função que cria a palavra secreta para o jogo.
 criarPalavraSecreta();
-
-// Função que inicializa a representação da palavra na tela.
 montarPalavraNaTela();
 
-// Função que sorteia uma palavra secreta a partir da lista de palavras.
 function criarPalavraSecreta() {
     const indexPalavra = Math.floor(Math.random() * palavras.length);
     const { nome, categoria } = palavras[indexPalavra];
@@ -23,7 +17,6 @@ function criarPalavraSecreta() {
     console.log(indexPalavra);
 }
 
-// Função que atualiza a representação da palavra na tela.
 function montarPalavraNaTela() {
     const categoria = document.getElementById("categoria");
     categoria.innerHTML = palavraSecretaCategoria;
@@ -38,7 +31,6 @@ function montarPalavraNaTela() {
     }
 }
 
-// Função que verifica se a letra escolhida pelo jogador está correta.
 function verificaLetraEscolhida(letra) {
     if (tentativas <= 0) return;
     document.getElementById(`tecla-${letra}`).disabled = true;
@@ -47,14 +39,12 @@ function verificaLetraEscolhida(letra) {
     montarPalavraNaTela();
 }
 
-// Função que muda o estilo de uma letra na tela (cores).
 function mudarStyleLetra(tecla, condicao) {
     const corFundo = condicao ? "#0000ff" : "#e61919";
     document.getElementById(tecla).style.background = corFundo;
     document.getElementById(tecla).style.color = "#ffffff";
 }
 
-// Função que compara a letra escolhida com a palavra secreta e atualiza a lista.
 function comparalistas(letra) {
     const pos = palavraSecretaSorteada.indexOf(letra);
     if (pos < 0) {
@@ -79,24 +69,22 @@ function comparalistas(letra) {
     }
 }
 
-// Função que carrega a imagem da forca de acordo com o número de tentativas restantes.
 function carregaImagemForca() {
     const numImagem = 6 - tentativas;
     document.getElementById("imagem").style.background = numImagem === 0 ? "url('./img/forca.png')" : `url('./img/forca0${numImagem}.png')`;
 }
 
-// Função que abre um modal com um título e uma mensagem.
 function abreModal(titulo, mensagem, status) {
-    let icon = 'info'; // Define um valor padrão para o ícone
+    let icon = 'info';
 
     if (status !== '0') {
-        icon = 'success'; // Altera o ícone se o status não for igual a '0'
+        icon = 'success'; 
     }
 
     Swal.fire({
         title: titulo,
         html: mensagem,
-        icon: icon, // Use o ícone determinado pela condição
+        icon: icon, 
         confirmButtonText: 'OK'
     }).then((result) => {
         jogarNovamente = false;
@@ -104,7 +92,7 @@ function abreModal(titulo, mensagem, status) {
     });
 }
 
-// Evento para reiniciar o jogo quando o botão "Reiniciar" é clicado.
+
 let bntReiniciar = document.querySelector("#btnReiniciar")
 bntReiniciar.addEventListener("click", function () {
     jogarNovamente = false;
@@ -113,11 +101,7 @@ bntReiniciar.addEventListener("click", function () {
 
 
 
-const modal = document.getElementById("modal-alerta");
 
-
-
-// Função para sortear uma nova palavra para o jogo.
 function sortear() {
     if (palavras.length > 0) {
         lista = [];
@@ -130,7 +114,7 @@ function sortear() {
     }
 }
 
-// Função que reseta as teclas no jogo.
+
 function resetaTeclas() {
     let teclas = document.querySelectorAll(".teclas > button")
     teclas.forEach((x) => {
@@ -140,7 +124,7 @@ function resetaTeclas() {
     });
 }
 
-// Função que carrega uma lista automática de palavras e categorias.
+
 console.log(palavraSecretaSorteada);
 
 function carregaListaAutomatica() {
