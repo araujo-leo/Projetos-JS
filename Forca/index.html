@@ -9,10 +9,8 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Jogo da Forca</title>
 
-    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
-
 </head>
 <body>
     <header class="header">
@@ -23,59 +21,82 @@
         </div>
     </header>
     <div class="container">
-        <div id="imagem"></div>
-
-        <div id="palavra-secreta">
-            
-        </div>
-
-        <div id="teclado">
-            <div class="teclas">
-                <button id="tecla-Q" onclick="verificaLetraEscolhida('Q')">Q</button>
-                <button id="tecla-W" onclick="verificaLetraEscolhida('W')">W</button>
-                <button id="tecla-E" onclick="verificaLetraEscolhida('E')">E</button>
-                <button id="tecla-R" onclick="verificaLetraEscolhida('R')">R</button>
-                <button id="tecla-T" onclick="verificaLetraEscolhida('T')">T</button>
-                <button id="tecla-Y" onclick="verificaLetraEscolhida('Y')">Y</button>
-                <button id="tecla-U" onclick="verificaLetraEscolhida('U')">U</button>
-                <button id="tecla-I" onclick="verificaLetraEscolhida('I')">I</button>
-                <button id="tecla-O" onclick="verificaLetraEscolhida('O')">O</button>
-                <button id="tecla-P" onclick="verificaLetraEscolhida('P')">P</button>
-            </div>
-            <div class="teclas">
-                <button id="tecla-A" onclick="verificaLetraEscolhida('A')">A</button>
-                <button id="tecla-S" onclick="verificaLetraEscolhida('S')">S</button>
-                <button id="tecla-D" onclick="verificaLetraEscolhida('D')">D</button>
-                <button id="tecla-F" onclick="verificaLetraEscolhida('F')">F</button>
-                <button id="tecla-G" onclick="verificaLetraEscolhida('G')">G</button>
-                <button id="tecla-H" onclick="verificaLetraEscolhida('H')">H</button>
-                <button id="tecla-J" onclick="verificaLetraEscolhida('J')">J</button>
-                <button id="tecla-K" onclick="verificaLetraEscolhida('K')">K</button>
-                <button id="tecla-L" onclick="verificaLetraEscolhida('L')">L</button>
-            </div>
-            <div class="teclas">
-                <button id="tecla-Z" onclick="verificaLetraEscolhida('Z')">Z</button>
-                <button id="tecla-X" onclick="verificaLetraEscolhida('X')">X</button>
-                <button id="tecla-C" onclick="verificaLetraEscolhida('C')">C</button>
-                <button id="tecla-V" onclick="verificaLetraEscolhida('V')">V</button>
-                <button id="tecla-B" onclick="verificaLetraEscolhida('B')">B</button>
-                <button id="tecla-N" onclick="verificaLetraEscolhida('N')">N</button>
-                <button id="tecla-M" onclick="verificaLetraEscolhida('M')">M</button>
-                <button id="btnReiniciar">🎮</button>
+        <div id="tela-inicial" class="text-center">
+            <h2>Bem-vindo ao Jogo da Forca</h2>
+            <p>Por favor, insira seu nome:</p>
+            <form id="nome-form">
+                <div class="form-group d-flex">
+                    <input type="text" class="form-control" id="nome" placeholder="Seu nome e sobrenome" required>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+            </form>
+            <h3>Lista de Ganhadores:</h3>
+            <div id="ganhadores">
+                <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th>Nome</th>
+                        <th>Tempo</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
             </div>
         </div>
-
-        <div id="categoria">
-            <!-- CATEGORIA -->
-        </div>
-
+    
+        <div id="jogo" style="display: none;">
+            <div class="container">
+                <div id="informacoes">
+                    <div id="nomeJogador"></div>
+                    <div id="relogio"></div>
+                </div>
+                <div id="imagem"></div>
+                <div id="palavra-secreta"></div>
+                <div id="teclado">
+                    <div class="teclas">
+                        <button id="tecla-Q" onclick="verificaLetraEscolhida('Q')">Q</button>
+                        <button id="tecla-W" onclick="verificaLetraEscolhida('W')">W</button>
+                        <button id="tecla-E" onclick="verificaLetraEscolhida('E')">E</button>
+                        <button id="tecla-R" onclick="verificaLetraEscolhida('R')">R</button>
+                        <button id="tecla-T" onclick="verificaLetraEscolhida('T')">T</button>
+                        <button id="tecla-Y" onclick="verificaLetraEscolhida('Y')">Y</button>
+                        <button id="tecla-U" onclick="verificaLetraEscolhida('U')">U</button>
+                        <button id="tecla-I" onclick="verificaLetraEscolhida('I')">I</button>
+                        <button id="tecla-O" onclick="verificaLetraEscolhida('O')">O</button>
+                        <button id="tecla-P" onclick="verificaLetraEscolhida('P')">P</button>
+                    </div>
+                    <div class="teclas">
+                        <button id="tecla-A" onclick="verificaLetraEscolhida('A')">A</button>
+                        <button id="tecla-S" onclick="verificaLetraEscolhida('S')">S</button>
+                        <button id="tecla-D" onclick="verificaLetraEscolhida('D')">D</button>
+                        <button id="tecla-F" onclick="verificaLetraEscolhida('F')">F</button>
+                        <button id="tecla-G" onclick="verificaLetraEscolhida('G')">G</button>
+                        <button id="tecla-H" onclick="verificaLetraEscolhida('H')">H</button>
+                        <button id="tecla-J" onclick="verificaLetraEscolhida('J')">J</button>
+                        <button id="tecla-K" onclick="verificaLetraEscolhida('K')">K</button>
+                        <button id="tecla-L" onclick="verificaLetraEscolhida('L')">L</button>
+                    </div>
+                    <div class="teclas">
+                        <button id="tecla-Z" onclick="verificaLetraEscolhida('Z')">Z</button>
+                        <button id="tecla-X" onclick="verificaLetraEscolhida('X')">X</button>
+                        <button id="tecla-C" onclick="verificaLetraEscolhida('C')">C</button>
+                        <button id="tecla-V" onclick="verificaLetraEscolhida('V')">V</button>
+                        <button id="tecla-B" onclick="verificaLetraEscolhida('B')">B</button>
+                        <button id="tecla-N" onclick="verificaLetraEscolhida('N')">N</button>
+                        <button id="tecla-M" onclick="verificaLetraEscolhida('M')">M</button>
+                        <button id="btnReiniciar">🎮</button>
+                    </div>
+                </div>
         
+                <div id="categoria">
+                    <!-- CATEGORIA -->
+                </div>
+            </div>
+        </div>
     </div>
     
-    
-    
-    
-   
 
     <footer class="footer">
         <div class="footer-container">
